@@ -1,0 +1,54 @@
+# Virtual environment
+venv/
+env/
+ENV/
+.venv/
+__pycache__/
+
+# Python cache files
+*.pyc
+*.pyo
+*.pyd
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# VS Code / IDE files
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Data files (if you want to keep datasets out of repo)
+data/*.csv
+data/*.xlsx
+data/*.json
+
+# Logs
+*.log
+
+# Distribution / packaging
+build/
+dist/
+*.egg-info/
+*.egg
+*.whl
+
+# Python coverage
+.coverage
+htmlcov/
+.tox/
+.nox/
+
+# Pytest / test caches
+.pytest_cache/
+.cache/
+
+# Environment files
+.env
+.env.*
