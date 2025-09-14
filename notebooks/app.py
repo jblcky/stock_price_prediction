@@ -5,9 +5,9 @@ from tensorflow.keras.models import load_model
 import joblib
 
 # --- Load model and scalers ---
-model = load_model("lstm_model.h5")
-feature_scaler = joblib.load("feature_scaler.pkl")
-target_scaler = joblib.load("target_scaler.pkl")
+model = load_model("notebooks/lstm_model.h5")
+feature_scaler = joblib.load("notebooks/feature_scaler.pkl")
+target_scaler = joblib.load("notebooks/target_scaler.pkl")
 
 SEQ_LEN = 60  # sequence length used in training
 feature_columns = ['Close', 'High', 'Low', 'Open', 'Volume', 'MA5', 'MA20',
