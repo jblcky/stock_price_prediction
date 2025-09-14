@@ -125,7 +125,7 @@ def run_prediction(df, model, feature_scaler, target_scaler):
     """
     SEQ_LEN = 60
     FEATURE_COLUMNS = ['Close', 'High', 'Low', 'Open', 'Volume', 'MA5', 'MA20',
-                       'Return', 'MA50', 'Volatility20', 'Lag1', 'Lag2', 'Lag3']
+                       'Return', 'MA50', 'Volatility20', 'Lag1', 'Lag2', 'Lag3', 'Month_sin', 'Month_cos']
 
     # --- Data Validation ---
     if not all(col in df.columns for col in FEATURE_COLUMNS):
