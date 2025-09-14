@@ -101,7 +101,7 @@ st.markdown("""
 def load_prediction_model():
     """Loads and caches the LSTM model."""
     try:
-        model = load_model("notebooks/lstm_model.h5", compile=False)
+        model = load_model("notebooks/lstm_model_v0.h5", compile=False)
         return model
     except (FileNotFoundError, IOError):
         st.error("Model file 'lstm_model.h5' not found. Please ensure it's in the 'notebooks' directory.")
@@ -111,8 +111,8 @@ def load_prediction_model():
 def load_scalers():
     """Loads and caches the feature and target scalers."""
     try:
-        feature_scaler = joblib.load("notebooks/feature_scaler.pkl")
-        target_scaler = joblib.load("notebooks/target_scaler.pkl")
+        feature_scaler = joblib.load("notebooks/feature_scaler_v0.pkl")
+        target_scaler = joblib.load("notebooks/target_scaler_v0.pkl")
         return feature_scaler, target_scaler
     except (FileNotFoundError, IOError):
         st.error("Scaler files not found in 'notebooks' directory. Please ensure 'feature_scaler.pkl' and 'target_scaler.pkl' are present.")
