@@ -6,7 +6,7 @@ from tensorflow.keras.models import load_model
 import joblib
 
 # --- Load model and scalers ---
-model = load_model("notebooks/lstm_model.h5")
+model = load_model("notebooks/lstm_model.h5", compile=False)
 feature_scaler = joblib.load("notebooks/feature_scaler.pkl")
 target_scaler = joblib.load("notebooks/target_scaler.pkl")
 
