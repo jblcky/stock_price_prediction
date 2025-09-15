@@ -30,7 +30,7 @@ st.set_page_config(
     initial_sidebar_state="collapsed",
 )
 
-# --- Custom CSS (unchanged) ---
+# --- Custom CSS ---
 st.markdown("""
 <style>
     /* General Styles */
@@ -172,7 +172,7 @@ if all([model, feature_scaler, target_scaler]):
     )
 
     if uploaded_file is not None:
-        # Run the entire pipeline
+        # Run the entire prediction pipeline
         predicted_price = get_prediction(uploaded_file, model, feature_scaler, target_scaler)
 
         if predicted_price is not None:
@@ -183,8 +183,10 @@ if all([model, feature_scaler, target_scaler]):
             </div>
             """, unsafe_allow_html=True)
 
-        # Optional: Show a preview of the uploaded data
+        # Optional: Show a preview of the uploaded raw data
         with st.expander("View Uploaded Raw Data (Last 5 Rows)"):
-            # Reread the file for display to avoid issues with the file buffer
+            # FIX: Reset the file buffer's cursor to the beginning before reading again
+            uploaded_file.seek(0)
+
             df_display = pd.read_csv(uploaded_file)
             st.dataframe(df_display.tail())
